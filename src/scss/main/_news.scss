@@ -1,0 +1,139 @@
+#news {
+	width: 100%;
+	height: auto;
+	background: #000;
+	position: relative;
+	overflow: hidden;
+
+	&.on {
+		.inner {
+			> h1 {
+				transform: translateX(0%);
+			}
+			.wrap {
+				transform: translateX(0%);
+			}
+		}
+	}
+
+	.inner {
+		width: 1180px;
+		height: 100%;
+		margin: 0 auto;
+		padding: 50px 0;
+		position: relative;
+		overflow: hidden;
+		transition: 0.5s;
+
+		> h1 {
+			font: bold 50px/1.3 'arial';
+			color: #fff;
+			letter-spacing: 1.3px;
+			margin-top: 0px;
+			margin-bottom: 40px;
+			transform: translateX(-100%);
+			transition: 0.5s;
+		}
+		.wrap {
+			width: 100%;
+			transform: translateX(120%);
+			transition: 0.5s 0.5s;
+			article {
+				width: 100%;
+				padding: 30px;
+				border-top: 2px solid #999;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				&:last-of-type {
+					border-bottom: 2px solid #999;
+				}
+
+				h5 {
+					width: calc(20%);
+					height: 100%;
+					word-wrap: break-word;
+					font: bold 16px/1.2 'arial';
+					color: #fff;
+				}
+				p {
+					word-wrap: break-word;
+					width: calc(60%);
+					height: 100%;
+					font: 14px/1.3 'arial';
+					color: #999;
+				}
+				> a {
+					width: 5%;
+					text-align: right;
+
+					&:hover .fa-right-to-bracket {
+						color: #555;
+					}
+					.fa-right-to-bracket {
+						transition: 0.5s;
+						font-size: 25px;
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#news {
+		.inner {
+			width: 100%;
+			padding: 50px 20px;
+			> h1 {
+				font: bold 33px/1.3 'arial';
+				margin-bottom: 20px;
+			}
+			.wrap {
+				article {
+					padding: 10px;
+					h5 {
+						font: bold 16px/1.2 'arial';
+					}
+					p {
+						font: 14px/1.3 'arial';
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#news {
+		.inner {
+			width: 100%;
+			padding: 20px;
+			> h1 {
+				font: bold 20px/1.3 'arial';
+				margin-bottom: 20px;
+			}
+			.wrap {
+				article {
+					padding: 10px 0;
+					flex-wrap: wrap;
+					position: relative;
+					h5 {
+						width: 90%;
+						font: bold 14px/1.2 'arial';
+						margin-bottom: 10px;
+					}
+					p {
+						width: 90%;
+						font: 12px/1.3 'arial';
+					}
+					a {
+						width: 10%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+	}
+}

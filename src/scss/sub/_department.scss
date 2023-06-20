@@ -1,0 +1,255 @@
+.Department {
+	background: #000;
+
+	> .inner {
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		article {
+			width: 33.333%;
+			float: left;
+			padding: 10px;
+			margin-bottom: 50px;
+			transition: 0.5s;
+
+			.inner {
+				width: 100%;
+
+				.pic {
+					width: 100%;
+					height: 300px;
+					background: #111;
+					filter: saturate(0.2);
+					cursor: pointer;
+					transition: 0.5s;
+
+					&:hover {
+						filter: saturate(1.1);
+						img {
+							border-radius: 0;
+						}
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						border-radius: 150px 0;
+						transition: 0.5s;
+					}
+				}
+				.txt {
+					background: #111;
+					color: #fff;
+					text-align: center;
+					padding: 20px;
+					filter: saturate(0.2);
+				}
+			}
+		}
+
+		#slider {
+			width: calc(100% - 20px);
+			height: 40vh;
+			position: relative;
+			margin: 50px auto;
+			overflow: hidden;
+
+			ul {
+				// width: calc(100% * 3);
+				margin-left: -100%;
+				height: 100%;
+				li {
+					// width: calc(100% / 3);
+					float: left;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					&.s1 {
+						background: #000;
+						.pic {
+							background: url(../../../public/img/department_pic01.jpg) no-repeat center/cover;
+						}
+					}
+					&.s2 {
+						background: #000;
+						.pic {
+							background: url(../../../public/img/department_pic02.jpg) no-repeat center/cover;
+						}
+					}
+					&.s3 {
+						background: #000;
+						.pic {
+							background: url(../../../public/img/department_pic03.jpg) no-repeat center/cover;
+						}
+					}
+					.pic {
+						width: 40%;
+						height: 100%;
+						background: #fff;
+						margin-left: 1px;
+						transition: 0.5s;
+					}
+					.txt {
+						transition: 0.5s;
+						height: 100%;
+						width: 60%;
+						padding: 20px 50px 20px 20px;
+						h2 {
+							font: 30px/1 'arial';
+							color: #fff;
+							margin-bottom: 20px;
+						}
+						p {
+							font: 16px/1.5 'arial';
+							color: #eee;
+							position: relative;
+							padding-bottom: 25px;
+							border-bottom: 1px solid #fff;
+							margin-bottom: 20px;
+						}
+						span {
+							font: 14px/1.2 'arial';
+							color: #888;
+							display: inline;
+						}
+					}
+				}
+			}
+
+			.btnSet {
+				position: absolute;
+				right: 5px;
+				bottom: 5px;
+				display: flex;
+				gap: 15px;
+				.prev {
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					svg {
+						color: #fff;
+						font-size: 30px;
+					}
+				}
+				.next {
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					svg {
+						color: #fff;
+						font-size: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Department {
+		> .inner {
+			article {
+				width: 50%;
+
+				.inner {
+					.pic {
+						height: 30vw;
+					}
+				}
+			}
+			#slider {
+				height: 60vh;
+				ul {
+					li {
+						flex-wrap: wrap;
+						.pic {
+							width: 100%;
+							height: 50%;
+							background: #fff;
+							margin-left: 1px;
+						}
+						.txt {
+							height: 50%;
+							width: 100%;
+							padding: 20px 0;
+							h2 {
+								font: 20px/1 'arial';
+							}
+							p {
+								font: 14px/1.5 'arial';
+							}
+							span {
+								display: none;
+							}
+						}
+					}
+				}
+
+				.btnSet {
+					position: absolute;
+					right: 2vw;
+					bottom: 5vw;
+					display: flex;
+					gap: 15px;
+					.prev {
+						background: transparent;
+						border: none;
+						cursor: pointer;
+						svg {
+							color: #fff;
+							font-size: 30px;
+						}
+					}
+					.next {
+						background: transparent;
+						border: none;
+						cursor: pointer;
+						svg {
+							color: #fff;
+							font-size: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Department {
+		> .inner {
+			article {
+				width: 100%;
+				padding: 0;
+
+				> .inner {
+					width: 100%;
+					.pic {
+						height: 50vw;
+					}
+				}
+			}
+
+			#slider {
+				width: 100%;
+				height: 30vh;
+				ul {
+					li {
+						.pic {
+							height: 100%;
+						}
+						.txt {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+$tablet: 1179px;
+$mobile: 539px;
+$boxColor: linear-gradient(#4e6298, #303239, #303239);
+$titleColor: #4e6298;
+$borderColor: #282b3a;
+
+//common
+@import './common/header';
+@import './common/footer';
+@import './common/layout';
+@import './common/reset';
+@import './common/modal';
+@import 'common/menu';
+
+//main
+@import 'main/visual';
+@import 'main/news';
+@import 'main/pics';
+@import 'main/vids';
+@import 'main/btns';
+
+//sub
+@import './sub/community';
+@import './sub/department';
+@import './sub/gallery';
+@import './sub/location';
+@import './sub/members';
+@import './sub/youtube';
